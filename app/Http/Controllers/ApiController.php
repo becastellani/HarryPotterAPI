@@ -9,7 +9,6 @@ class ApiController extends Controller
 {
     public function getCharacters(Request $request)
     {
-        // Defina o número de itens por página desejado, por exemplo, 10 itens por página.
         $perPage = 9;
 
         

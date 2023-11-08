@@ -6,8 +6,12 @@
     <div class="grid grid-cols-3 gap-4">
         @foreach ($paginatedCharacters as $character)
             <div class="bg-white rounded-lg shadow-lg p-4">
-                <img src="{{ $character->image }}"  class="w-32 h-32 object-cover rounded-full mx-auto mb-2">
-                <p class="text-center font-bold">{{ $character->name }}</p>
+                <button class="mx-auto flex flex-col items-center">
+                    <img src="{{ $character->image }}"  class="w-32 h-32 object-cover rounded-full mx-auto mb-2">
+                    <p class="text-center font-bold">{{ $character->name }}</p>
+                    <p> {{ 'Data de Nascimento: ' . date('d/m/Y', strtotime($character->dateOfBirth)) }}</p>
+                    <p>{{'Patrono: ' . ucfirst($character->patronus ? $character->patronus : 'Não Identificado')}}</p>
+                </button>
             </div>
         @endforeach
     </div>
